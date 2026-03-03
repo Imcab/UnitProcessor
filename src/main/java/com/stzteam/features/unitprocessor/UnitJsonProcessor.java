@@ -15,11 +15,10 @@ import java.util.Map;
 import java.util.Set;
 
 @AutoService(Processor.class)
-@SupportedAnnotationTypes("com.stzteam.mars.units.Unit")
+@SupportedAnnotationTypes("com.stzteam.features.unitprocessor.Unit")
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class UnitJsonProcessor extends AbstractProcessor {
 
-    // Candado para asegurar que el hack solo corra UNA vez y no choque
     private boolean hasGenerated = false;
 
     @Override
@@ -35,7 +34,7 @@ public class UnitJsonProcessor extends AbstractProcessor {
             for (Element element : roundEnv.getElementsAnnotatedWith(Unit.class)) {
                 Unit unitAnnotation = element.getAnnotation(Unit.class);
                 String unitType = unitAnnotation.value();
-                String groupName = unitAnnotation.group(); // Si esto falla, el catch lo atrapará
+                String groupName = unitAnnotation.group();
                 String jsonKey = "";
 
                 if (element.getKind() == ElementKind.PARAMETER) {
@@ -94,13 +93,12 @@ public class UnitJsonProcessor extends AbstractProcessor {
                 writer.write(jsonBuilder.toString());
             }
 
-            // Avisamos a la consola que fue un éxito rotundo
-            messager.printMessage(Diagnostic.Kind.NOTE, "[MARS] ¡ProjectUnits.json generado exitosamente en la raíz!");
+            messager.printMessage(Diagnostic.Kind.NOTE, "[MARS] ¡ProjectUnits.json generado exitosamente en la raiz!");
             hasGenerated = true;
 
         } catch (Exception e) {
             // SI ALGO FALLA, LO GRITAMOS EN ROJO EN LA CONSOLA
-            messager.printMessage(Diagnostic.Kind.ERROR, "[MARS ERROR CRÍTICO] " + e.toString());
+            messager.printMessage(Diagnostic.Kind.ERROR, "[MARS ERROR CRITICO] " + e.toString());
         }
 
         return true;
