@@ -10,10 +10,12 @@ import javax.tools.StandardLocation;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 @AutoService(Processor.class)
-@SupportedAnnotationTypes("com.stzteam.features.unitprocessor.Unit")
+@SupportedAnnotationTypes("com.stzteam.feature.unitprocessor.Unit")
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class UnitJsonProcessor extends AbstractProcessor {
 
@@ -21,13 +23,14 @@ public class UnitJsonProcessor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         if (annotations.isEmpty()) return false;
 
-        StringBuilder jsonBuilder = new StringBuilder();
-        jsonBuilder.append("{\n");
-        boolean first = true;
+        // Estructura: Grupo -> (Llave -> Unidad)
+        Map<String, Map<String, String>> groupedUnits = new HashMap<>();
 
+        // 1. Recopilamos y agrupamos la información
         for (Element element : roundEnv.getElementsAnnotatedWith(Unit.class)) {
             Unit unitAnnotation = element.getAnnotation(Unit.class);
             String unitType = unitAnnotation.value();
+            String groupName = unitAnnotation.group();
             String jsonKey = "";
 
             if (element.getKind() == ElementKind.PARAMETER) {
@@ -42,15 +45,39 @@ public class UnitJsonProcessor extends AbstractProcessor {
                 jsonKey = className + "." + elementName;
             }
 
-            if (!first) jsonBuilder.append(",\n");
-            jsonBuilder.append("  \"").append(jsonKey).append("\": \"").append(unitType).append("\"");
-            first = false;
+            // Si el grupo no existe, lo creamos
+            groupedUnits.putIfAbsent(groupName, new HashMap<>());
+            // Metemos la variable en su grupo correspondiente
+            groupedUnits.get(groupName).put(jsonKey, unitType);
+        }
+
+        // 2. Construimos el JSON anidado
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{\n");
+        boolean firstGroup = true;
+
+        for (Map.Entry<String, Map<String, String>> groupEntry : groupedUnits.entrySet()) {
+            if (!firstGroup) jsonBuilder.append(",\n");
+            
+            // Nombre del grupo (Ej: "Arm")
+            jsonBuilder.append("  \"").append(groupEntry.getKey()).append("\": {\n");
+            
+            boolean firstItem = true;
+            for (Map.Entry<String, String> itemEntry : groupEntry.getValue().entrySet()) {
+                if (!firstItem) jsonBuilder.append(",\n");
+                
+                // Llave y Valor (Ej: "Turret.limit": "Degrees")
+                jsonBuilder.append("    \"").append(itemEntry.getKey()).append("\": \"").append(itemEntry.getValue()).append("\"");
+                firstItem = false;
+            }
+            jsonBuilder.append("\n  }");
+            firstGroup = false;
         }
 
         jsonBuilder.append("\n}\n");
 
+        // 3. Escribimos el archivo en la raíz del proyecto (Hack MARS)
         try {
-
             FileObject dummy = processingEnv.getFiler().createResource(StandardLocation.CLASS_OUTPUT, "", "mars_dummy.tmp");
             File dummyFile = new File(dummy.toUri().getPath());
 
@@ -62,8 +89,7 @@ public class UnitJsonProcessor extends AbstractProcessor {
             if (projectRoot != null && projectRoot.getParentFile() != null) {
                 projectRoot = projectRoot.getParentFile();
             } else {
-
-                projectRoot = new File("."); 
+                projectRoot = new File(".");
             }
 
             File jsonFile = new File(projectRoot, "ProjectUnits.json");
