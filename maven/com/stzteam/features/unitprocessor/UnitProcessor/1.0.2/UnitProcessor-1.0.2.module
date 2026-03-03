@@ -3,7 +3,7 @@
   "component": {
     "group": "com.stzteam.features.unitprocessor",
     "module": "UnitProcessor",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "UnitProcessor-1.0.1.jar",
-          "url": "UnitProcessor-1.0.1.jar",
-          "size": 5546,
-          "sha512": "57d6dfbd122fa8789b911bb75b29cc07825101370232e2f47354bc77fa647d8456a8be361aed9f47644208ba696e38a11e62cc68ac67cb5aa002756e79f4744a",
-          "sha256": "96b1126522d26df11316b92ce871640b86062696a658bace66f76cbc9ac37e5c",
-          "sha1": "cb6c08075cfe0a31181eadf0780220cfd4b3b066",
-          "md5": "ae4a9eabe1cebaf3a6d0b5d09522201e"
+          "name": "UnitProcessor-1.0.2.jar",
+          "url": "UnitProcessor-1.0.2.jar",
+          "size": 5938,
+          "sha512": "4c6d9c216009fe7218b0a7a45c8b11e09914d5dc91e68b4a859db370e4549730e8212720b45b080d44b244eb4690a0d10103579020b67468851581bb4c0db138",
+          "sha256": "06f38947189b3f51fe534e8a825308b16b1f329d38631acbefac99ae9a5a76fc",
+          "sha1": "e690717ad03715abb51fb1d8128756c086856bda",
+          "md5": "6b04e3e4ed2c620b86fac55ade2208a4"
         }
       ]
     },
@@ -195,13 +195,13 @@
       ],
       "files": [
         {
-          "name": "UnitProcessor-1.0.1.jar",
-          "url": "UnitProcessor-1.0.1.jar",
-          "size": 5546,
-          "sha512": "57d6dfbd122fa8789b911bb75b29cc07825101370232e2f47354bc77fa647d8456a8be361aed9f47644208ba696e38a11e62cc68ac67cb5aa002756e79f4744a",
-          "sha256": "96b1126522d26df11316b92ce871640b86062696a658bace66f76cbc9ac37e5c",
-          "sha1": "cb6c08075cfe0a31181eadf0780220cfd4b3b066",
-          "md5": "ae4a9eabe1cebaf3a6d0b5d09522201e"
+          "name": "UnitProcessor-1.0.2.jar",
+          "url": "UnitProcessor-1.0.2.jar",
+          "size": 5938,
+          "sha512": "4c6d9c216009fe7218b0a7a45c8b11e09914d5dc91e68b4a859db370e4549730e8212720b45b080d44b244eb4690a0d10103579020b67468851581bb4c0db138",
+          "sha256": "06f38947189b3f51fe534e8a825308b16b1f329d38631acbefac99ae9a5a76fc",
+          "sha1": "e690717ad03715abb51fb1d8128756c086856bda",
+          "md5": "6b04e3e4ed2c620b86fac55ade2208a4"
         }
       ]
     }
