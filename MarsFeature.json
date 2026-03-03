@@ -1,20 +1,20 @@
 {
-  "featureId": "TemplateFeature",
-  "name": "Nombre de tu Feature",
+  "featureId": "UnitProcessor",
+  "name": "Unit Processor",
   "version": "1.0.0",
-  "groupId": "com.tu.equipo",
-  "author": "Tu Equipo",
-  "description": "Descripción de lo que hace tu nodo.",
+  "groupId": "com.stzteam.features.unitprocessor",
+  "author": "STZ-Robotics",
+  "description": "Annotation processor for Units.",
   "marsCoreRequired": ">=1.6.0",
   "mavenUrls": [
-    "https://TU-USUARIO.github.io/TU-REPO/maven/"
+    "https://imcab.github.io/UnitProcessor/maven/"
   ],
   "javaDependencies": [
     {
-      "groupId": "com.tu.equipo",
-      "artifactId": "TemplateFeature",
+      "groupId": "com.stzteam.features.unitprocessor",
+      "artifactId": "UnitProcessor",
       "version": "1.0.0",
-      "isProcessor": false
+      "isProcessor": true
     }
   ]
 }
