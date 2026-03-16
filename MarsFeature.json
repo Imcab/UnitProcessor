@@ -4,8 +4,16 @@
   "version": "1.0.3",
   "groupId": "com.stzteam.features.unitprocessor",
   "author": "STZ-Robotics",
+
+
+  "category": "Processor",
   "description": "Annotation processor for Units.",
+  "iconUrl": "https://raw.githubusercontent.com/Imcab/UnitProcessor/main/featureIcon/icon.png",
+  "docsUrl": "",
+
+  "wpilibYear": "2026",
   "marsCoreRequired": ">=1.6.0",
+
   "mavenUrls": [
     "https://imcab.github.io/UnitProcessor/maven/"
   ],
