@@ -1,18 +1,13 @@
 {
   "featureId": "UnitProcessor",
   "name": "Unit Processor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "groupId": "com.stzteam.features.unitprocessor",
   "author": "STZ-Robotics",
-
-
-  "category": "Processor",
   "description": "Annotation processor for Units.",
-  "iconUrl": "https://raw.githubusercontent.com/Imcab/UnitProcessor/main/featureIcon/icon.png",
-  "docsUrl": "",
 
-  "wpilibYear": "2026",
   "marsCoreRequired": ">=1.6.0",
+  "forgeMiniRequired": ">=1.1.0",
 
   "mavenUrls": [
     "https://imcab.github.io/UnitProcessor/maven/"
@@ -21,7 +16,7 @@
     {
       "groupId": "com.stzteam.features.unitprocessor",
       "artifactId": "UnitProcessor",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "isProcessor": true
     }
   ]

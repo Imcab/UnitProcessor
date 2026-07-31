@@ -3,7 +3,7 @@
   "component": {
     "group": "com.stzteam.features.unitprocessor",
     "module": "UnitProcessor",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "UnitProcessor-1.0.3.jar",
-          "url": "UnitProcessor-1.0.3.jar",
-          "size": 5937,
-          "sha512": "f76b8d001bec53577f16961bad72632748c1096dd5ba59f3dfef804b0a5ef329381dfda1b4f88959a8bf249e24e1648bec0c53f2fd92a3a2f7d96ff7f0de6df2",
-          "sha256": "341e6d6f732446992bceea17f962a220a0d2461bdf5c82e01284c4a0226275b0",
-          "sha1": "9f452c7f6277fda1eeb656f004b39a325f3db16f",
-          "md5": "d21b08f43e6f327909d94d7e5ef0c160"
+          "name": "UnitProcessor-1.0.4.jar",
+          "url": "UnitProcessor-1.0.4.jar",
+          "size": 5928,
+          "sha512": "70112af9b6081420958efec61f6a6deb3e2a363418fc30fcbce3c6423b1bf856116bbb4f2bfbaaff393f8bad2889fd2eb3ab92eaa756bcf51b541d03f192a4e4",
+          "sha256": "80b1adb1b76e025c94f4c34361f8c82af7704c9ac966564df51e4c2bcbbfb40a",
+          "sha1": "dbb415d30fac24f6d99dcbb260f0ba652bd5d418",
+          "md5": "1d39a5a9167c8ea51b2b624171bfe39d"
         }
       ]
     },
@@ -175,14 +175,14 @@
           "group": "com.stzteam.forgemini",
           "module": "ForgeMini",
           "version": {
-            "requires": "1.1.1"
+            "requires": "[1.1.0,)"
           }
         },
         {
           "group": "com.stzteam.mars",
           "module": "Mars",
           "version": {
-            "requires": "1.6.0"
+            "requires": "[1.6.0,)"
           }
         },
         {
@@ -195,13 +195,13 @@
       ],
       "files": [
         {
-          "name": "UnitProcessor-1.0.3.jar",
-          "url": "UnitProcessor-1.0.3.jar",
-          "size": 5937,
-          "sha512": "f76b8d001bec53577f16961bad72632748c1096dd5ba59f3dfef804b0a5ef329381dfda1b4f88959a8bf249e24e1648bec0c53f2fd92a3a2f7d96ff7f0de6df2",
-          "sha256": "341e6d6f732446992bceea17f962a220a0d2461bdf5c82e01284c4a0226275b0",
-          "sha1": "9f452c7f6277fda1eeb656f004b39a325f3db16f",
-          "md5": "d21b08f43e6f327909d94d7e5ef0c160"
+          "name": "UnitProcessor-1.0.4.jar",
+          "url": "UnitProcessor-1.0.4.jar",
+          "size": 5928,
+          "sha512": "70112af9b6081420958efec61f6a6deb3e2a363418fc30fcbce3c6423b1bf856116bbb4f2bfbaaff393f8bad2889fd2eb3ab92eaa756bcf51b541d03f192a4e4",
+          "sha256": "80b1adb1b76e025c94f4c34361f8c82af7704c9ac966564df51e4c2bcbbfb40a",
+          "sha1": "dbb415d30fac24f6d99dcbb260f0ba652bd5d418",
+          "md5": "1d39a5a9167c8ea51b2b624171bfe39d"
         }
       ]
     }
